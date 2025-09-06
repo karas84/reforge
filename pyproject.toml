@@ -1,0 +1,19 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "reforge"
+version = "1.0.0"
+description = "Tool to analyze ELF objects, extract sections/symbols, and generate build environments for function reconstruction."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{ name = "karas84", email = "karas84@users.noreply.github.com" }]
+dependencies = ["pydantic==2.11.7", "pyelftools==0.32", "toml==0.10.2"]
+
+[project.scripts]
+reforge = "reforge.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["reforge"]
